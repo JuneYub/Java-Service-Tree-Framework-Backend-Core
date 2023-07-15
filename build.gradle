@@ -102,7 +102,7 @@ ext {
     majorVersion = 23
     minorVersion = 05
     //patchVersion = auto generation
-
+    /* 이 부분은 주석처리
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
         println "*** Windows is not support build "
     }else {
@@ -111,6 +111,7 @@ ext {
             args "-O", "${projectDir}/metadata.xml", "${metadataUrl}"
         }
     }
+    */
     def metadataFile = new XmlSlurper().parse(new File("${projectDir}/metadata.xml"))
     String latest = metadataFile."versioning"."latest"
     String versionPrefix = latest.split("-")[0]
